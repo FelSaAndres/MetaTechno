@@ -1,6 +1,6 @@
 import React from "react"
 import logo from '../../varios/tecnologo.png'
-import carrito from '../../varios/carritocompras.png'
+import Carrito from '../../Componentes/Header/CartWidget'
 import './Cabezera.css'
 
 const Nav = () => {
@@ -11,7 +11,7 @@ const Nav = () => {
                 <a href="">Inicio</a>
                 <a href="">Productos</a>
                 <a href="">Contactos</a>
-                <img src={carrito} className="carrito" alt="carrito" />
+                <Carrito valor="2" />
             </nav>
         </header>
     )
