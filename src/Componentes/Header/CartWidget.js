@@ -1,9 +1,9 @@
 import React from "react";
-import carrito from '../../varios/carritocompras.png'
+import { FaShoppingCart } from 'react-icons/fa';
 
 const Carrito = (valor) =>{
     return(
-        <span><img src={carrito} className="carrito" alt="carrito" />2</span>
+        <span><FaShoppingCart />2</span>
     )
 }
 
