@@ -1,13 +1,15 @@
 import React from 'react'
+import "./item.css"
 
 function Item({productos}){
-    const {Titulo, precio, Stock, image} = productos
+    const {title, price, stock, image} = productos
     return(
         <div className='itemBox'>
-            <h4>{Titulo}</h4>
-            <p>${precio}</p>
+            <img src={image} alt={title}/>
+            <h4>{title}</h4>
+            <p>${price}</p>
             <button>Ver detalle del producto</button>
-            <h4>Stock: {Stock}</h4>
+            <h4>Stock: {stock}</h4>
         </div>
     )
 }
