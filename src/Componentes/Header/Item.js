@@ -8,7 +8,7 @@ function Item({productos}){
             <img src={image} alt={title}/>
             <h4>{title}</h4>
             <p>${price}</p>
-            <button>Ver detalle del producto</button>
+            <button><p>Ver detalle del producto</p></button>
             <h4>Stock: {stock}</h4>
         </div>
     )
