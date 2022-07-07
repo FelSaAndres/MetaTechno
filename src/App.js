@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import Cabezera from './Componentes/Header/Cabezera';
 import ListaProductos from './Componentes/Header/ItemListContainer';
+import DetalleProducto from './Componentes/Header/ItemDetailsConteiner';
 import './App.css';
 
 
@@ -9,6 +10,7 @@ const App = () => {
     <div className='App'>
       <Cabezera />
       <ListaProductos />
+      <DetalleProducto />
     </div>
   );
 }
