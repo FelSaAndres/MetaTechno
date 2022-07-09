@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ItemList from './ItemList';
 import ItemCount from "./ItemCount"
+import "./Cabezera.css"
+import {useParams} from "react-router-dom"
 
     /*const listproductos = [
     {id:1, title:"PlayStation 5 Standard", stock: 9, initual: 1, price: 1800, image:"https://www.cetrogar.com.ar/media/catalog/product/e/l/el2307_ps5_playstation_ps5_hw_standard.jpg?width=500&height=500&canvas=500,500&quality=80&bg-color=255,255,255&fit=bounds"},
@@ -19,14 +21,18 @@ import ItemCount from "./ItemCount"
         const [loading, setLoading] = useState(true)
         const [error, setError] = useState(false)
 
+        const {categoryName} = useParams()
+
         function onAdd() {
             alert(`Su compra fue exitosa`)
         }
 
         useEffect(() => {
+            const URL = categoryName ? `https://fakestoreapi.com/products/category/${categoryName}` : `https://fakestoreapi.com/products`
+
             const getProductos = async () => {
                 try{
-                    const response = await fetch('https://fakestoreapi.com/products?limit=9')
+                    const response = await fetch(URL)
                     const datos = await response.json()
                     setProductos(datos)
                 }
@@ -39,13 +45,13 @@ import ItemCount from "./ItemCount"
                 }
             }
             getProductos()
-        }, [])
+        }, [categoryName])
 
         return(
             <>
             <h1>Catalogo de Productos</h1>
             {loading ? (<div>... Cargando</div>) : error ? <p>Error</p> : (<ItemList productos={productos}/>)}
-            <ItemCount stock={7} initial={1} onAdd={onAdd}/>
+            {/*<ItemCount stock={7} initial={1} onAdd={onAdd}/>*/}
             </>
         )
     }

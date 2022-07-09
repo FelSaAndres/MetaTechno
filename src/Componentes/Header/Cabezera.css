@@ -1,8 +1,18 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(201, 107, 107);
+    margin: auto;
+}
+
+h1{
+    text-align: center;
 }
 
 span{
@@ -22,11 +32,44 @@ span{
     margin-right: 3px;
 }
 
-a{
-    font-weight: bold;
-    color: black;
+ul, ol{
+    list-style: none;
+}
+
+nav li a{
+    background-color: #000;
+    color: #fff;
     text-decoration: none;
-    margin-right: 20px;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav li a:hover{
+    background-color: #434343;
+}
+
+nav ul{
+    display: flex;
+    gap: 10px;
+}
+
+nav li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+nav li:hover > ul{
+    display: block;
+}
+
+nav li ul li{
+    position: relative;
+}
+
+nav li ul li ul{
+    right: -140px;
+    top: 0px;
 }
 
 .cantidadStock{
