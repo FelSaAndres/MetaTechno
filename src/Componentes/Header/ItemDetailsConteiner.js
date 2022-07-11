@@ -3,21 +3,21 @@ import ItemDetails from "./ItemDetails"
 import {useParams} from "react-router-dom"
 
 const ItemDetailsConteiner = () => {
-    const [productos, setProductos] = useState([])
+    const [producto, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
-    const {productID} = useParams()
+    const {itemID} = useParams()
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/1`)
+        fetch(`https://fakestoreapi.com/products/${itemID}`)
         .then(res => res.json())
         .then(data => setProductos(data))
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
-    }, [productID])
+    }, [itemID])
 
     return(
         <>
-            {loading ? <div>...Cargando</div> : <ItemDetails productos={productos}/>}
+            {loading ? <div>...Cargando</div> : <ItemDetails producto={producto}/>}
         </>
     )
 }

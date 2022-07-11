@@ -11,11 +11,11 @@ const Nav = () => {
             <nav>
                 <ul>
                     <li><a href="">Inicio</a></li>
-                    <li><a href="">Productos</a>
+                    <li><Link to="/">Electronica</Link>
                         <ul>
-                            <li><Link to="/category/electronics">Televisores</Link></li>
-                            <li><Link to="/category/Consolas">Consolas</Link></li>
-                            <li><Link to="/category/Computadoras">Computadoras</Link></li>
+                            <li><Link to="/category/electronics">Electronica</Link></li>
+                            <li><Link to="/category/jewelery">Joyas</Link></li>
+                            <li><Link to="/category/men's clothing">Ropa de hombre</Link></li>
                         </ul>
                     </li>
                     <li><a href="">Contactos</a></li>

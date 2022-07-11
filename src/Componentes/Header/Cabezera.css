@@ -19,6 +19,8 @@ span{
     background-color: rgb(180, 180, 180);
     margin-right: 10px;
     font-size: 26px;
+    color: black;
+    list-style: none;
 }
 
 .logo{
