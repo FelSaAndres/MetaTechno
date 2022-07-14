@@ -74,19 +74,6 @@ nav li ul li ul{
     top: 0px;
 }
 
-.cantidadStock{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.cantidadStock button{
-    height: 25px;
-    width: 25px;
-
-}
-
 .comprar{
     height: 40px;
     width: 100px;
