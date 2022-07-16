@@ -1,10 +1,13 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
-const ItemCount = ({enviarID}) =>{
+const ItemCount = ({GenerarCompra}) =>{
 
     const [cantidad, setCuenta] = useState(1)
-    const idItem = `/item/${enviarID}`
+
+    const BotonCompra = () => {
+        GenerarCompra()
+    }
 
     function sumar() {
         setCuenta(cantidad + 1)
@@ -16,10 +19,6 @@ const ItemCount = ({enviarID}) =>{
         }
     }
 
-    const CantidadCompra = (event) => {
-        const total = cantidad
-    }
-
     return(
         <>
         <div className="cantidadStock">
@@ -27,7 +26,7 @@ const ItemCount = ({enviarID}) =>{
             <p>{cantidad}</p>
             <button onClick={(sumar)}>+</button>
         </div>
-        <Link to={idItem} property={cantidad}><button className="comprar">Agregar al carrito</button></Link>
+        <button className="comprar" onClick={BotonCompra}>Agregar al carrito</button>
         </>
     )
 }

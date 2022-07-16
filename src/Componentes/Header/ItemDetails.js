@@ -1,14 +1,16 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
 import './detalle.css'
 import ItemCount from "./ItemCount"
 
-const ItemDetail = ({producto, CantidadCompra}) => {
-    const {id, title, price, image, description} = producto
+const ItemDetail = ({producto}) => {
+    const {title, price, image, description} = producto
 
-    const [total, setTotal] = useState()
+    const [cantidad, setCantidad] = useState()
+    const [estado, setEstado] = useState(true)
 
     const GenerarCompra = () => {
-        CantidadCompra()
+        setEstado(false)
     }
 
     return(
@@ -17,7 +19,7 @@ const ItemDetail = ({producto, CantidadCompra}) => {
             <div className="infoConteiner_info">
             <h4>{title}</h4>
             <p>${price}</p>
-            <ItemCount enviarID={id}/>
+            {estado ? <ItemCount GenerarCompra={GenerarCompra}/> : <Link to='/cart'><button>Comprar</button></Link>}
             <span>{description}</span>
             </div>
         </div>
