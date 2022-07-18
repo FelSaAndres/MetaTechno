@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ItemList from './ItemList';
-import ItemCount from "./ItemCount"
 import "./Cabezera.css"
 import {useParams} from "react-router-dom"
 import ClipLoader from "react-spinners/ClipLoader";
@@ -23,10 +22,6 @@ import ClipLoader from "react-spinners/ClipLoader";
         const [error, setError] = useState(false)
 
         const {categoryName} = useParams()
-
-        function onAdd() {
-            alert(`Su compra fue exitosa`)
-        }
 
         useEffect(() => {
             const URL = categoryName ? `https://fakestoreapi.com/products/category/${categoryName}` : `https://fakestoreapi.com/products`
@@ -51,7 +46,7 @@ import ClipLoader from "react-spinners/ClipLoader";
         return(
             <>
             <h1>Catalogo de Productos</h1>
-            {loading ? <ClipLoader color={'#F37A24'} loading={loading} size={30} /> : error ? <p>Error</p> : (<ItemList productos={productos}/>)}
+            {loading ? <ClipLoader color={'#C96B6B'} loading={loading} size={50} /> : error ? <p>Error</p> : (<ItemList productos={productos}/>)}
             </>
         )
     }

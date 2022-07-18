@@ -4,19 +4,22 @@ import ListaProductos from './Componentes/Header/ItemListContainer';
 import DetalleProducto from './Componentes/Header/ItemDetailsConteiner';
 import Carrito from './Componentes/Header/Cart';
 import './App.css';
+import CustomProvider from './Componentes/Header/CartContext';
 import { BrowserRouter, Routes, Route} from 'react-router-dom'; 
 
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Cabezera />
-      <Routes>
-        <Route path='/' element={<ListaProductos />}/>
-        <Route path='/category/:categoryName' element={<ListaProductos />}/>
-        <Route path='/item/:itemID' element={<DetalleProducto />}/>
-        <Route path='/cart' element={<Carrito />}/>
-      </Routes>
+      <CustomProvider>
+        <Cabezera />
+        <Routes>
+          <Route path='/' element={<ListaProductos />}/>
+          <Route path='/category/:categoryName' element={<ListaProductos />}/>
+          <Route path='/item/:itemID' element={<DetalleProducto />}/>
+          <Route path='/cart' element={<Carrito />}/>
+        </Routes>
+      </CustomProvider>
     </BrowserRouter>
   );
 }

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import ItemDetails from "./ItemDetails"
 import {useParams} from "react-router-dom"
+import ClipLoader from "react-spinners/ClipLoader";
 
 const ItemDetailsConteiner = () => {
     const [producto, setProductos] = useState([])
@@ -17,7 +18,7 @@ const ItemDetailsConteiner = () => {
 
     return(
         <>
-            {loading ? <div>...Cargando</div> : <ItemDetails producto={producto}/>}
+            {loading ? <ClipLoader color={'#C96B6B'} loading={loading} size={50} /> : <ItemDetails producto={producto}/>}
         </>
     )
 }
