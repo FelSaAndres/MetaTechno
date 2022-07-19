@@ -1,12 +1,11 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
 
 const ItemCount = ({GenerarCompra}) =>{
 
     const [cantidad, setCuenta] = useState(1)
 
     const BotonCompra = () => {
-        GenerarCompra()
+        GenerarCompra(cantidad)
     }
 
     function sumar() {

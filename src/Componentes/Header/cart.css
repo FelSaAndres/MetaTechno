@@ -1,0 +1,87 @@
+.itemCartConteiner{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.itemCart{
+    width: 330px;
+    height: 330px;
+    background-color: rgb(184, 85, 85);
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.itemCart img{
+    width: 330px;
+    height: 220px;
+}
+
+.itemCart h4{
+    font-weight: 600;
+}
+
+.itemCart p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.itemCart button{
+    width: 50px;
+    height: 20px;
+    border: none;
+}
+
+.buttonVaciar{
+    display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: #141414;
+  color: white;
+  font-size: 5px;
+  font-weight: 200;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: .3s ease all;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  left: 43%;
+}
+
+.buttonVaciar p{
+    position: relative;
+  z-index: 2;
+  transition: .3s ease all; 
+  font-size: 15px;
+}
+
+.buttonVaciar::after{
+    content: "";
+  width: 100%;
+  height: 100%;
+  background: red;
+  position: absolute;
+  z-index: 1;
+  top: -80px;
+  left: 0;
+  transition: .3s ease-in-out all;
+}
+
+.buttonVaciar:hover::after{
+    top: 0;
+}

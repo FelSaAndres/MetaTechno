@@ -7,15 +7,17 @@ import { contexto } from "./CartContext"
 const ItemDetail = ({producto}) => {
     const {title, price, image, description} = producto
 
+    const [cantidad, setCantidad] = useState('')
     const [estado, setEstado] = useState(true)
-    const { addItem } = useContext(contexto)
+    const { addItem, isInCart } = useContext(contexto)
 
-    const GenerarCompra = () => {
+    const GenerarCompra = (cant) => {
         setEstado(false)
+        setCantidad(cant)
     }
 
     const Agregar = () => {
-        addItem(producto)
+        addItem(producto, cantidad)
     }
 
     return(
