@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
+import { contexto } from "./CartContext"
 import { FaShoppingCart } from 'react-icons/fa';
 
-const Carrito = (valor) =>{
+const Carrito = () =>{
+    
+    const { total } = useContext(contexto)
+
     return(
-        <span><FaShoppingCart /></span>
+        <span className="carritoLogo"><FaShoppingCart />{total}</span>
     )
 }
 

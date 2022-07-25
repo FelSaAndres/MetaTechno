@@ -13,9 +13,9 @@ const Nav = () => {
                     <li><a href="">Inicio</a></li>
                     <li><Link to="/">Productos</Link>
                         <ul>
-                            <li><Link to="/category/electronics">Electronica</Link></li>
-                            <li><Link to="/category/jewelery">Joyas</Link></li>
-                            <li><Link to="/category/men's clothing">Ropa de hombre</Link></li>
+                            <li><Link to="/category/Computer">Computadoras</Link></li>
+                            <li><Link to="/category/Consoles">Consolas</Link></li>
+                            <li><Link to="/category/Screens">Pantallas</Link></li>
                         </ul>
                     </li>
                     <li><a href="">Contactos</a></li>

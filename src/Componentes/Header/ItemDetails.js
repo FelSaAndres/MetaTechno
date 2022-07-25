@@ -5,15 +5,16 @@ import ItemCount from "./ItemCount"
 import { contexto } from "./CartContext"
 
 const ItemDetail = ({producto}) => {
-    const {title, price, image, description} = producto
+    const {title, price, img, description} = producto
 
     const [cantidad, setCantidad] = useState('')
     const [estado, setEstado] = useState(true)
-    const { addItem, isInCart } = useContext(contexto)
+    const { addItem, ProductCount } = useContext(contexto)
 
     const GenerarCompra = (cant) => {
         setEstado(false)
         setCantidad(cant)
+        ProductCount()
     }
 
     const Agregar = () => {
@@ -22,7 +23,7 @@ const ItemDetail = ({producto}) => {
 
     return(
         <div className="infoConteiner">
-            <img src={image} alt={title}/>
+            <img src={img} alt={title}/>
             <div className="infoConteiner_info">
             <h4>{title}</h4>
             <p>${price}</p>
