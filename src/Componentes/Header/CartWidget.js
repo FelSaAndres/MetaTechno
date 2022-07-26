@@ -4,10 +4,10 @@ import { FaShoppingCart } from 'react-icons/fa';
 
 const Carrito = () =>{
     
-    const { total } = useContext(contexto)
+    const { ProductCount } = useContext(contexto)
 
     return(
-        <span className="carritoLogo"><FaShoppingCart />{total}</span>
+        <span className="carritoLogo"><FaShoppingCart />{ProductCount()}</span>
     )
 }
 

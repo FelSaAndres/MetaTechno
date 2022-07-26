@@ -6,7 +6,6 @@ const { Provider } = contexto
 const CustomProvider = ({children}) => {
 
     const [producto, setProductos] = useState([])
-    const [total, setTotal] = useState()
     
     const addItem = (produc, cantidad) => {
         if (isInCart(produc.id)) {
@@ -42,25 +41,29 @@ const CustomProvider = ({children}) => {
     }
 
     const ProductCount = () => {
-        /*let acumulado = 0
-        for (let index = 0; index < producto.length; index++) {
-            acumulado += producto[index].quantity
-        }*/
-        //setTotal(acumulado)
+        const canttotal = producto.map(x => x.quantity)
+        let acumulado = 0
+        for (let i = 0; i < canttotal.length; i++) {
+            acumulado += parseInt(canttotal[i])
+        }
+        return acumulado == 0 ? acumulado = null : acumulado
     }
 
     const MontoTotal = () => {
         const montotal = producto.map(x => x.price)
+        const canttotal = producto.map(x => x.quantity)
         let costo = 0
+
         for (let i = 0; i < montotal.length; i++) {
-            costo += parseInt(montotal[i])
+            costo += parseInt(montotal[i]) * parseInt(canttotal[i])
         }
+
         return costo
     }
 
     return(
         <>
-            <Provider value={{producto, total, addItem, removeItem, Clear, StateList, ProductCount, MontoTotal}}>
+            <Provider value={{producto, addItem, removeItem, Clear, StateList, ProductCount, MontoTotal}}>
                 {children}
             </Provider>
         </>
