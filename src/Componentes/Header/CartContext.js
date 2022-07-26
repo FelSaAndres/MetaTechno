@@ -46,14 +46,21 @@ const CustomProvider = ({children}) => {
         for (let index = 0; index < producto.length; index++) {
             acumulado += producto[index].quantity
         }*/
-        console.log(producto.length)
-        console.log(producto)
         //setTotal(acumulado)
+    }
+
+    const MontoTotal = () => {
+        const montotal = producto.map(x => x.price)
+        let costo = 0
+        for (let i = 0; i < montotal.length; i++) {
+            costo += parseInt(montotal[i])
+        }
+        return costo
     }
 
     return(
         <>
-            <Provider value={{producto, total, addItem, removeItem, Clear, StateList, ProductCount}}>
+            <Provider value={{producto, total, addItem, removeItem, Clear, StateList, ProductCount, MontoTotal}}>
                 {children}
             </Provider>
         </>

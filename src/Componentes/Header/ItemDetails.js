@@ -5,7 +5,7 @@ import ItemCount from "./ItemCount"
 import { contexto } from "./CartContext"
 
 const ItemDetail = ({producto}) => {
-    const {title, price, img, description} = producto
+    const {title, price, img, description, stock} = producto
 
     const [cantidad, setCantidad] = useState('')
     const [estado, setEstado] = useState(true)
@@ -27,7 +27,7 @@ const ItemDetail = ({producto}) => {
             <div className="infoConteiner_info">
             <h4>{title}</h4>
             <p>${price}</p>
-            {estado ? <ItemCount GenerarCompra={GenerarCompra}/> : <Link to='/cart'><button onClick={Agregar}>Comprar</button></Link>}
+            {estado ? <ItemCount GenerarCompra={GenerarCompra} stock={stock}/> : <Link to='/cart'><button onClick={Agregar}>Comprar</button></Link>}
             <span>{description}</span>
             </div>
         </div>

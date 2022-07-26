@@ -41,10 +41,25 @@
     border: none;
 }
 
+.controlsCart{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonsCart{
+    display: flex;
+    gap: 3%;
+    margin-right: 20%;
+}
+
+.controlsCart p{
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
 .buttonVaciar{
-    display: inline-flex;
-  align-items: center;
-  justify-content: center;
   width: 200px;
   height: 50px;
   margin-bottom: 20px;

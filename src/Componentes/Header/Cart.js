@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
 
-    const { producto, removeItem, Clear, StateList } = useContext(contexto)
+    const { producto, removeItem, Clear, StateList, MontoTotal } = useContext(contexto)
 
     const VaciarCarrito = () => {
         Clear()
@@ -14,7 +14,6 @@ const Cart = () => {
     const EliminarItem = (id) => {
         removeItem(id)
     }
-
 
     return(
         <>
@@ -29,7 +28,10 @@ const Cart = () => {
                     <button onClick={() => EliminarItem(produc.id)}>Quitar</button> 
                 </div>))}
             </div> : <div className="NoneItems"><p>El carrito se encuetra vacio</p><Link to="/"><button className="buttonIrCompras"><span>Ir a comprar</span></button></Link></div>}
-            {StateList() ? <button className="buttonVaciar" onClick={VaciarCarrito}><p>Vaciar carrito</p></button> : null}
+            {StateList() ? <div className="controlsCart">
+                           <div className="buttonsCart"><button className="buttonVaciar" onClick={VaciarCarrito}><p>Vaciar carrito</p></button>
+                           <button className="buttonVaciar"><p>Finalizar Compra</p></button></div>
+                           <p>Total: ${MontoTotal()}</p></div> : null}
         </>
     )
 }

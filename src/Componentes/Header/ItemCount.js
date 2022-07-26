@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-const ItemCount = ({GenerarCompra}) =>{
+const ItemCount = ({GenerarCompra, stock}) =>{
 
     const [cantidad, setCuenta] = useState(1)
 
@@ -9,7 +9,10 @@ const ItemCount = ({GenerarCompra}) =>{
     }
 
     function sumar() {
-        setCuenta(cantidad + 1)
+        if(cantidad < stock)
+        {
+            setCuenta(cantidad + 1)
+        }
     }
 
     function restar() {

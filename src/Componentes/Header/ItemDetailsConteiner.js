@@ -25,11 +25,6 @@ const ItemDetailsConteiner = () => {
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
 
-        /*fetch(`https://fakestoreapi.com/products/${itemID}`)
-        .then(res => res.json())
-        .then(data => setProductos(data))
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))*/
 
     }, [itemID])
 

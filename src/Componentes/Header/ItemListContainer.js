@@ -31,23 +31,6 @@ import { getDocs, collection, query, where } from "firebase/firestore"
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
 
-            /*const URL = categoryName ? `https://fakestoreapi.com/products/category/${categoryName}` : `https://fakestoreapi.com/products`
-            const getProductos = async () => {
-                try{
-                    const response = await fetch(URL)
-                    const datos = await response.json()
-                    setProductos(datos)
-                }
-                catch(err){
-                    setError(true)
-                    console.error(err)
-                }
-                finally{
-                    setLoading(false)
-                }
-            }
-            getProductos()*/
-
         }, [categoryName])
 
         return(
