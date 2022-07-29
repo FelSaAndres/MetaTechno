@@ -56,7 +56,7 @@ const Cart = () => {
             </div> : <div className="NoneItems"><p>El carrito se encuetra vacio</p><Link to="/"><button className="buttonIrCompras"><span>Ir a comprar</span></button></Link></div>}
             {StateList() ? <div className="controlsCart">
                            <div className="buttonsCart"><button className="buttonVaciar" onClick={VaciarCarrito}><p>Vaciar carrito</p></button>
-                           <Link to="/form"><button className="buttonVaciar" /*onClick={TerminarCompra}*/><p>Finalizar Compra</p></button></Link></div>
+                           <Link to="/form"><button className="buttonConfimar" /*onClick={TerminarCompra}*/><p>Finalizar Compra</p></button></Link></div>
                            <p>Total: ${MontoTotal()}</p></div> : null}
         </> 
     )
