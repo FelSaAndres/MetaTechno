@@ -8,10 +8,6 @@ const Formulario = () => {
 
     const { producto, MontoTotal } = useContext(contexto)
 
-    const Prueba = () => {
-        console.log(document.getElementById("name").value)
-    }
-
     const CargarCliente = () => {
         const cliente = {
             nombre: document.querySelector("#name").value,
@@ -29,6 +25,8 @@ const Formulario = () => {
             date: serverTimestamp(), 
             total: MontoTotal()
         })
+
+        .then((resp) => alert("Su numero de id es: " + resp.id))
 
         const idProducts = producto.map(x => x.id)
         const qtyProducts = producto.map(x => x.quantity)

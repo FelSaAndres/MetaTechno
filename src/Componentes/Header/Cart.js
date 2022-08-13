@@ -2,8 +2,6 @@ import React, {useContext} from "react";
 import { contexto } from "./CartContext"
 import "./cart.css"
 import { Link } from "react-router-dom";
-import { db } from "../../FireBase/firebase"
-import {doc, addDoc, collection, serverTimestamp, updateDoc} from "firebase/firestore"
 
 const Cart = () => {
 
@@ -15,30 +13,6 @@ const Cart = () => {
 
     const EliminarItem = (id) => {
         removeItem(id)
-    }
-
-    const compradorData = {
-        nombre: "Mario",
-        telefono: "1150235234",
-        email: "mariodominguez@gmail.com"
-    }
-
-    const TerminarCompra = () => {
-        const ventasCollection = collection(db, "ventas")
-        addDoc(ventasCollection, {
-            compradorData,
-            items: producto,
-            date: serverTimestamp(), 
-            total: MontoTotal()
-        })
-
-        const idProducts = producto.map(x => x.id)
-        const qtyProducts = producto.map(x => x.quantity)
-        const stockProducts = producto.map(x => x.stock)
-        for (let i = 0; i < idProducts.length; i++) {
-            const updateCollection = doc(db, "productos", idProducts[i])
-            updateDoc(updateCollection, {stock: stockProducts[i] - qtyProducts[i]})
-        }
     }
 
     return(
@@ -56,7 +30,7 @@ const Cart = () => {
             </div> : <div className="NoneItems"><p>El carrito se encuetra vacio</p><Link to="/"><button className="buttonIrCompras"><span>Ir a comprar</span></button></Link></div>}
             {StateList() ? <div className="controlsCart">
                            <div className="buttonsCart"><button className="buttonVaciar" onClick={VaciarCarrito}><p>Vaciar carrito</p></button>
-                           <Link to="/form"><button className="buttonConfimar" /*onClick={TerminarCompra}*/><p>Finalizar Compra</p></button></Link></div>
+                           <Link to="/form"><button className="buttonConfimar"><p>Finalizar Compra</p></button></Link></div>
                            <p>Total: ${MontoTotal()}</p></div> : null}
         </> 
     )
