@@ -40,27 +40,30 @@ const Formulario = () => {
     return(
         <div className="section__form">
 
-            <h2>Ingresa tus datos</h2>
+            <h2 className="title_form">Ingresa tus datos</h2>
 
             <div className="form">
 
                 <div className="grupo">
-                    <input type="text" name="nombre" id="name" required></input>
-                    <label>Nombre</label>
+                    <input type="text" name="nombre" id="name" className="form_input" placeholder=" " required></input>
+                    <label className="description">Nombre</label>
+                    <span className="form_line"></span>
                 </div>
 
                 <div className="grupo">
-                    <input type="email" name="e-mail" id="email" required></input>
-                    <label>E-mail</label>
+                    <input type="email" name="e-mail" id="email" className="form_input" placeholder=" " required></input>
+                    <label className="description">E-mail</label>
+                    <span className="form_line"></span>
                 </div>
 
                 <div className="grupo">
-                    <input type="text" name="telefono" id="phone" required></input>
-                    <label>Telefono</label>
+                    <input type="text" name="telefono" id="phone" className="form_input" placeholder=" " required></input>
+                    <label className="description">Telefono</label>
+                    <span className="form_line"></span>
                 </div>
 
                 <div className="button">
-                    <button  id="ingresar" onClick={CargarCliente}>Iniciar</button>
+                    <button  id="ingresar" onClick={CargarCliente}>Pagar</button>
                 </div>
                 
             </div>
